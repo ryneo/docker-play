@@ -1,21 +1,19 @@
-docker-play
-===========
+# docker-play
+---
 
-[![dockeri.co](http://dockeri.co/image/dordoka/play-framework)](https://registry.hub.docker.com/u/dordoka/play-framework/)
-
-This is a minimal docker container based on Ubuntu 14.04 for Play Framework development.
+This is a minimal docker container based on Debian 7.8 for Play Framework development.
 
 # Description
-You should run this container interactivelly and launch activator console commands from within your play projects directories.
+You should run this container interactively and launch activator console commands from within your play projects directories.
 
 Includes:
 
  - Oracle JDK 1.8
  - Typesafe Activator 1.3.2
- - Git, wget, curl, build-essential
+ - `git`, `wget`, `curl`, `build-essential`
 
 ## Users
-A user named `play` is created with sudoers privileges. Home is at `/home/play`.
+A `play` user with sudoers privileges. Home is at `/home/play`.
 
 ## Volumes
 Exports a volume on `/home/play/Code`.
@@ -37,7 +35,7 @@ Remember to map the ports to the docker host on run.
 # How to run the container
 ## Using docker
 You need docker v1.3+ installed. To get the container up and running and drop to an interactive shell, run:
- 
+
 ```
 sudo docker run --rm -it -v "/home/dordoka/Code:/home/play/Code" -p 9000:9000 -p 9999:9999 -p 8888:8888 dordoka/play-framework
 ```
@@ -49,6 +47,3 @@ If you have `docker-compose` installed, you can just launch:
 ```
 sudo docker-compose up
 ```
-
-
-### Happy coding! :)
